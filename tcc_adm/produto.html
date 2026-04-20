@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Produto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="produto-page">
+
+        <div class="produto-img-box">
+            <div class="img-slider">
+                <button class="img-arrow img-left">&#10094;</button>
+
+                <div class="img-track"></div>
+
+                <button class="img-arrow img-right">&#10095;</button>
+            </div>
+        </div>
+
+        <h1 id="produto-nome"></h1>
+        <p id="produto-preco"></p>
+
+        <select id="tamanho">
+            <option>P</option>
+            <option>M</option>
+            <option>G</option>
+        </select>
+
+        <button id="buy">Comprar</button>
+        <button id="cart">Adicionar ao carrinho</button>
+
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("produto"))
+
+        // ELEMENTOS
+        const nomeEl = document.getElementById("produto-nome")
+        const precoEl = document.getElementById("produto-preco")
+        const slides = document.querySelector(".img-track")
+        const nextBtn = document.querySelector(".img-right")
+        const prevBtn = document.querySelector(".img-left")
+
+        // DADOS
+        nomeEl.textContent = data.nome
+
+        function formatPrice(valor) {
+            return "R$ " + Number(valor).toFixed(2).replace(".", ",")
+        }
+
+        precoEl.textContent = formatPrice(data.preco)
+
+        // ================= IMAGENS =================
+        const imagens = data.imagens || [
+            "imagens/ecobag.png",
+            "imagens/ecobag.png",
+            "imagens/ecobag.png"
+        ]
+
+        // CRIA LOOP IGUAL AO BANNER (clone início + fim)
+        slides.innerHTML = `
+    <img src="${imagens[imagens.length - 1]}">
+    ${imagens.map(img => `<img src="${img}">`).join("")}
+    <img src="${imagens[0]}">
+`
+
+        let index = 1
+        const totalSlides = imagens.length
+
+        slides.style.transform = `translateX(-100%)`
+
+        // ================= ANIMAÇÃO =================
+        function updateSlider() {
+            slides.style.transition = "transform .6s ease"
+            slides.style.transform = `translateX(-${index * 100}%)`
+        }
+
+        // NEXT
+        function nextSlide() {
+            index++
+            if (index > totalSlides + 1) {
+                index = totalSlides + 1
+            }
+            updateSlider()
+        }
+
+        // PREV
+        function prevSlide() {
+            index--
+            if (index < 0) {
+                index = 0
+            }
+            updateSlider()
+        }
+
+        // BOTÕES
+        nextBtn.onclick = () => {
+            nextSlide()
+            resetAutoSlide()
+        }
+
+        prevBtn.onclick = () => {
+            prevSlide()
+            resetAutoSlide()
+        }
+
+        // LOOP INFINITO (MESMA LÓGICA DO BANNER)
+        slides.addEventListener("transitionend", () => {
+
+            if (index === totalSlides + 1) {
+                slides.style.transition = "none"
+                index = 1
+                slides.style.transform = `translateX(-100%)`
+            }
+
+            if (index === 0) {
+                slides.style.transition = "none"
+                index = totalSlides
+                slides.style.transform = `translateX(-${index * 100}%)`
+            }
+        })
+
+        // ================= AUTO SLIDE =================
+        let autoSlide = setInterval(nextSlide, 3000)
+
+        function resetAutoSlide() {
+            clearInterval(autoSlide)
+            autoSlide = setInterval(nextSlide, 3000)
+        }
+    </script>
+
+</body>
+
+</html>

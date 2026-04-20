@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi - Ecobags</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--navbar-->
+    <nav class="nav-box">
+
+        <div class="top-ad">
+            <p>ANUNCIO AQUI</p>
+            <a href="">COMPRE AQUI</a>
+        </div>
+        <div class="navbar">
+            <div class="menu-side">
+                <label class="burger" for="burger">
+                    <input type="checkbox" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="nav-logo" onclick="window.location.href=''"></div>
+                <div class="a-side">
+                    <a href="" class="nav-outlet">OUTLET</a>
+                    <a href="" class="nav-sales">OFERTAS</a>
+                </div>
+            </div>
+            <div class="search-side">
+                <!--uiverse.io--> <!--MODIFICADO-->
+                <div class="input-container">
+                    <input type="text" id="input" required="">
+                    <label for="input" class="label">BUSCAR</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="search-icon"></div>
+                <div class="mobile-search">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <!--div do perfil e carrinho-->
+                <div class="profile"></div>
+                <div class="cart">
+                    <img src="" alt="">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--conteudo principal-->
+    <main class="main-content">
+
+        <!--secao banner-->
+        <section class="banner">
+            <!--banner-->
+            <div class="banner-slider">
+                <div class="slides">
+                    <div class="slide">Slide 4</div>
+                    <div class="slide">Slide 1</div>
+                    <div class="slide">Slide 2</div>
+                    <div class="slide">Slide 3</div>
+                    <div class="slide">Slide 4</div>
+                    <div class="slide">Slide 1</div>
+                </div>
+                <button class="arrow left">&#10094;</button>
+                <button class="arrow right">&#10095;</button>
+                <div class="slider-nav">
+                    <span class="nav-line" data-index="1"></span>
+                    <span class="nav-line" data-index="2"></span>
+                    <span class="nav-line" data-index="3"></span>
+                    <span class="nav-line" data-index="4"></span>
+                </div>
+            </div>
+        </section>
+        <!--secao bento-->
+        <section class="bento-section">
+            <!--grids-->
+            <div class="card card-pink">
+                <div class="content">
+                    <h2>Teste</h2>
+                    <p>teste</p>
+                </div>
+            </div>
+            <div class="card card-beach">
+                <div class="content">
+                    <h2>Teste</h2>
+                    <p>teste</p>
+                </div>
+            </div>
+            <div class="card card-yellow">
+                <div class="content">
+                    <h2>Teste</h2>
+                </div>
+            </div>
+            <div class="card card-flower">
+                <div class="content">
+                    <h2>Teste</h2>
+                </div>
+            </div>
+            <div class="card card-green">
+                <div class="content">
+                    <h2>Teste</h2>
+                    <p>teste</p>
+                </div>
+            </div>
+        </section>
+        <!-- secao produtos-->
+        <section class="products">
+            <div class="product-nav">
+                <div class="product-left">
+                    <h2>Conheça nossas ecobags</h2>
+                    <span id="categories-title">Novidades</span>
+                </div>
+                <div class="product-actions">
+                    <!--botao de filtrar produto-->
+                    <button id="btnFilter">
+                        <img src="imagens/Filter_icon.png" alt="" class="filtericon">
+                        Filtrar
+                    </button>
+                    <!--botao de organizar produto-->
+                    <button id="btnOrganize">
+                        <img src="imagens/Organize_icon.png" alt="" class="organizeicon">
+                        Ordenar
+                    </button>
+                </div>
+            </div>
+            <!-- filtrar produto -->
+            <div class="dropdown" id="dropFilter">
+                <button data-filter="all">Todos</button>
+                <button data-filter="novidades">Novidades</button>
+                <button data-filter="promo">Promoções</button>
+                <button data-filter="premium">Premium</button>
+            </div>
+            <!-- ordenar produto -->
+            <div class="dropdown" id="dropOrganize">
+                <button data-sort="preco-menor">Preço menor</button>
+                <button data-sort="preco-maior">Preço maior</button>
+                <button data-sort="tamanho">Tamanho</button>
+            </div>
+            <!--grid produto-->
+            <div class="products-grid">
+                <div class="card2" data-categoria="novidades" data-preco="39" data-precos="P:29.90,M:39.90,G:49.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:7,M:9,G:10" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag sustentavel</h3>
+                        <p>R$ 39,90</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="promo" data-preco="29" data-precos="P:19.90,M:29.90,G:35.00" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:2,M:7,G:4" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag </h3>
+                        <p>R$ 29,90</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="premium" data-preco="59" data-precos="P:45.90,M:59.90,G:67.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:0,M:5,G:2" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag com estampa</h3>
+                        <p>R$ 59,90</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="novidades" data-preco="42" data-precos="P:29.90,M:42.78,G:59.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:11,M:13,G:9"data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag personalizada</h3>
+                        <p>R$ 42,78</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="promo" data-preco="35" data-precos="P:25.90,M:35.00,G:45.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:8,M:5,G:2" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag </h3>
+                        <p>R$ 35,00</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="premium" data-preco="69" data-precos="P:59.00,M:69.00,G:80.00" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:8,M:9,G:5" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag </h3>
+                        <p>R$ 69,00</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="novidades" data-preco="42" data-precos="P:29.90,M:42.00,G:49.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:10,M:8,G:4" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag </h3>
+                        <p>R$ 42,00</p>
+                    </div>
+                </div>
+                <div class="card2" data-categoria="novidades" data-preco="39" data-precos="P:29.90,M:39.00,G:49.90" data-tamanhos="P,M,G" data-tamanho="M" data-estoque="P:10,M:6,G:2" data-imagens="imagens/ecobag.png,imagens/teste.webp,imagens/ecobag.png">
+                    <img src="imagens/ecobag.png">
+                    <div class="box">
+                        <h3>Ecobag </h3>
+                        <p>R$ 39,00</p>
+                    </div>
+                </div>
+            </div>
+            <button class="show-more" id="">Ver mais</button>
+        </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-column logo-column">
+                <div class="footer-logo"></div>
+                <p>Conecte-se com a Lumi nas redes sociais:</p>
+                <div class="social-icons">
+                    <a href="" class="icon-ig"></a>
+                    <a href="" class="icon-fb"></a>
+                    <a href="" class="icon-wpp"></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Institucional</h3>
+                <ul>
+                    <li><a href="">Sobre nós</a></li>
+                    <li><a href="">Nossas lojas</a></li>
+                    <li><a href="">Trabalhe conosco</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Dúvidas</h3>
+                <ul>
+                    <li><a href="">Entregas</a></li>
+                    <li><a href="">Pagamentos</a></li>
+                    <li><a href="">Trocas e devoluções</a></li>
+                    <li><a href="">Políticas de privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Atendimento</h3>
+                <p>bag.by.lumi@gmail.com</p>
+                <p>(00) 0000-0000</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumi. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <strong>Alphanyx</strong></p>
+        </div>
+    </footer>
+    <!--pop-up do produto-->
+    <div id="product-popup" class="modal-overlay">
+        <div class="popup-content">
+            <button class="close-popup">&times;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
