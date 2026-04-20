@@ -38,14 +38,14 @@
     <script>
         const data = JSON.parse(localStorage.getItem("produto"))
 
-        // ELEMENTOS
+        // Elementos
         const nomeEl = document.getElementById("produto-nome")
         const precoEl = document.getElementById("produto-preco")
         const slides = document.querySelector(".img-track")
         const nextBtn = document.querySelector(".img-right")
         const prevBtn = document.querySelector(".img-left")
 
-        // DADOS
+        // Dados
         nomeEl.textContent = data.nome
 
         function formatPrice(valor) {
@@ -54,14 +54,14 @@
 
         precoEl.textContent = formatPrice(data.preco)
 
-        // ================= IMAGENS =================
+        // Imagens do produto
         const imagens = data.imagens || [
             "imagens/ecobag.png",
             "imagens/ecobag.png",
             "imagens/ecobag.png"
         ]
 
-        // CRIA LOOP IGUAL AO BANNER (clone início + fim)
+        // loop do banner
         slides.innerHTML = `
     <img src="${imagens[imagens.length - 1]}">
     ${imagens.map(img => `<img src="${img}">`).join("")}
@@ -73,13 +73,13 @@
 
         slides.style.transform = `translateX(-100%)`
 
-        // ================= ANIMAÇÃO =================
+        // animaçao do banner
         function updateSlider() {
             slides.style.transition = "transform .6s ease"
             slides.style.transform = `translateX(-${index * 100}%)`
         }
 
-        // NEXT
+        // Proxima imagem
         function nextSlide() {
             index++
             if (index > totalSlides + 1) {
@@ -88,7 +88,7 @@
             updateSlider()
         }
 
-        // PREV
+        // Imagem anterior
         function prevSlide() {
             index--
             if (index < 0) {
@@ -97,7 +97,7 @@
             updateSlider()
         }
 
-        // BOTÕES
+        // botoes
         nextBtn.onclick = () => {
             nextSlide()
             resetAutoSlide()
@@ -108,7 +108,7 @@
             resetAutoSlide()
         }
 
-        // LOOP INFINITO (MESMA LÓGICA DO BANNER)
+        // Loop do banner
         slides.addEventListener("transitionend", () => {
 
             if (index === totalSlides + 1) {
@@ -124,7 +124,7 @@
             }
         })
 
-        // ================= AUTO SLIDE =================
+        // animação automatica
         let autoSlide = setInterval(nextSlide, 3000)
 
         function resetAutoSlide() {

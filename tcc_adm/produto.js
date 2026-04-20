@@ -7,7 +7,6 @@ const select = document.getElementById("produto-tamanho")
 
 nomeEl.textContent = data.nome
 
-// 🔥 PREÇOS POR TAMANHO
 const precos = data.precos || {}
 let precoAtual = data.preco
 
@@ -20,7 +19,6 @@ function atualizarPreco() {
 select.onchange = atualizarPreco
 atualizarPreco()
 
-// 🔥 IMAGENS DINÂMICAS
 const imagens = data.imagens || [
     "https://via.placeholder.com/400?text=1",
     "https://via.placeholder.com/400?text=2",
